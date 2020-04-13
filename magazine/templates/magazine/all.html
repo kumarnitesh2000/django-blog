@@ -1,0 +1,500 @@
+
+
+{%extends 'magazine/base.html'%}
+{%block title%}{%endblock%}
+
+{%block content%}
+{%load static%}
+<style>
+body{
+
+}
+.head1{
+display:flex;
+border-top:2px solid #eee;
+border-bottom:2px solid #eee;
+}
+.head2{
+border-radius:30px;
+width:100px;
+height:100px;
+background-color:whitesmoke;
+border:box-sizing;
+border:1px solid #eee;
+margin-top:50px;
+}
+.head3{
+padding:20px;
+text-align:center;
+margin-left:5px;
+width:200px;
+height:170px;
+background-color:whitesmoke;
+border:box-sizing;
+border:1px solid #eee;
+margin-top:10px;
+}
+.head4{
+display:flex;
+}
+.head5{
+padding:20px;
+margin-left:5px;
+width:200px;
+height:170px;
+background-color:whitesmoke;
+border:box-sizing;
+border:1px solid #eee;
+margin-top:10px;
+}
+.head6{
+display:flex;
+}
+.head7{
+padding:10px;
+width:500px;
+height:250px;
+background-color:#eee;
+border:box-sizing;
+border:1px solid black;
+margin-top:25px;
+display:flex;
+}
+button{
+margin-left:10px;
+background-color:#4CBB17;
+padding:10px;
+font-family:consolas;
+font-size:15px;
+}
+h4{
+
+font-size:20px;
+font-family:monospace;
+}
+h3{
+font-size:25px;
+font-family:monospace;
+}
+
+
+h2{
+font-size:30px;
+font-family:monospace;
+}
+.left91{
+height:250px;
+width:520px;
+border: 1px solid black;
+border-radius:10px;
+
+}
+.left{
+
+height:250px;
+width:400px;
+background-color:#eee;
+border: 1px solid black;
+border-radius:10px;
+
+}
+.head8{
+display:flex;
+margin-top:10px;
+margin-left:10px;
+}
+.review{
+
+width:500px;
+background-color:#eee;
+}
+.best p{
+text-align:center;
+font-size:20px;
+font-family:verdena;
+border:box-sizing;
+border:1px solid white;
+background-color:#4CBB17;
+padding:10px;
+}
+.small{
+display:flex;
+margin-top:20px;
+}
+.head91{
+border-radius:10px;
+height:328px;
+width:520px;
+background-color:grey;
+margin-top:20px;
+margin-left:50px;
+margin-right:20px;
+}
+.head9{
+border-radius:10px;
+height:300px;
+width:400px;
+background-color:grey;
+margin-top:20px;
+margin-left:50px;
+margin-right:20px;
+}
+.head10{
+display:flex;
+}
+.small p{
+margin-top:3px;
+margin-left:8px;
+fon-size:18px;
+font-family:consolas;
+
+}
+.new{
+width:90%;
+color:grey;
+}
+.but1{
+display:flex;
+}
+.see button{
+border-radius:10px;
+margin-left:10px;
+background-color:#4CBB17;
+padding-left:200px;
+padding-right:200px;
+padding-top:10px;
+padding-bottom:10px;
+font-family:consolas;
+font-size:18px;
+}
+.continue button{
+border-radius:10px;
+margin-left:370px;
+margin-top:20px;
+background-color:#4CBB17;
+padding-left:190px;
+padding-right:190px;
+padding-top:10px;
+padding-bottom:10px;
+font-family:consolas;
+font-size:18px;
+}
+.head11{
+margin-top:10px;
+border:2px solid grey;
+padding:10px;
+display:flex;
+}
+.activity{
+border-right:2px solid grey;
+padding-right:180px;
+}
+.trending{
+border-right:2px solid grey;
+padding-right:180px;
+}
+.store{
+border-right:2px solid grey;
+padding-right:180px;
+}
+
+.head11 p{
+font-size:25px;
+font-family:monospace;
+font-weight:bold;
+margin-left:100px;
+}
+.recommended p{
+font-size:45px;
+font-family:monospace;
+font-weight:bold;
+}
+.reads{
+display:flex;
+}
+.more button{
+background-color:#4CBB17;
+font-size:20px;
+font-family:consolas;
+padding:10px;
+margin-top:10px;
+margin-left:1020px;
+margin-bottom:45px;
+border-radius:10px;
+}
+
+.review1{
+margin-left:10px;
+position:absolute;
+top:1230px;
+left:1130px;
+width:360px;
+background-color:#eee;
+}
+.for1{
+margin-left:10px;
+}
+.submit{
+padding-left:4px;
+}
+.footer{
+height:290px;
+width:99.9%;
+position:relative;
+bottom:20px;
+background-color:#26272b;
+display:flex;
+
+}
+.submit1{
+border-radius:10px;
+width:260px;
+padding-left:80px;
+padding-right:80px;
+padding-top:10px;
+padding-bottom:10px;
+background-color:#4CBB17;
+font-family:consolas;
+font-size:20px;
+margin-top:10px;
+display:inline;
+cursor:pointer;
+}
+.email{
+border-radius:10px;
+width:240px;
+background-color:#eee;
+padding-left:5px;
+padding-right:8px;
+padding-top:10px;
+padding-bottom:10px;
+font-family:consolas;
+font-size:20px;
+margin-top:10px;
+}
+</style>
+
+<div class="head1">
+<h2> SUBSCRIBED MAGZINES </h2>
+    <h2 style="margin-left:600px;">PENDING</h2>
+</div>
+<div class="head10">
+<div class="head7">
+<div class="head2">
+    <img src="{%static 'accounts/frank.jpg'%}" style="WIDTH:100PX; HEIGHT:100PX;border-radius:30px;">
+</div>
+<div class="head3">
+    <h3>{{magazine}}</h3>
+    <p>{{totsub}} SUBSCRIBERS</p>
+    <div class="head4">
+    <button>VIEW</button>
+     <button>SUGGEST</button>
+        </div>
+</div>
+<div class="head5">
+    <h4>Created By:-</h4>
+    <div class="head6">
+    <img src="{%static 'accounts/frank.jpg'%}" style="height:40px; width:40px; margin-left:5px;margin-right:10px;">
+        <p style="font-family:verdena; font-size:20px;margin-top:0px;">{{author}}</p>
+    </div>
+</div>
+
+</div>
+<div class="head9">
+<div class="left">
+</div>
+<div class="head8">
+<img src="{%static 'accounts/frank.jpg'%}" style="width:30px; height:30px;border-radius:50%;">
+<h6 style="margin-left:15px; font-size:20px; font-family:monospace; margin-top:5px;">AWS</h6>
+<h6 style="margin-left:25px; font-size:20px; font-family:monospace;margin-top:5px;">S3</h6>
+<h6 style="margin-left:25px; font-size:20px; font-family:monospace;margin-top:5px;">2min</h6>
+<p style="margin-left:55px; font-size:15px; font-family:verdena;margin-top:0.5px;">40 <i style="font-size:24px" class="fa">&#xf06e;</i></p>
+<i style='font-size:24px;margin-left:55px;margin-top:1px;' class='fas'>&#xf0ca;</i>
+</div>
+</div>
+    <div class="for">
+<div class="review">
+    <div class="best">
+        <p>BEST REVIEW</p>
+    </div>
+    <div class="small">
+    <img src="{%static 'accounts/frank.jpg'%}" style="width:30px; height:30px;border-radius:50%;">
+    <p> CNET is a giant in the tech-review biz.</p>
+    </div>
+    <hr class="new">
+    <div class="small">
+    <img src="{%static 'accounts/frank.jpg'%}" style="width:30px; height:30px;border-radius:50%;">
+    <p>This magazine has a single mission: make sure you trust what you buy. </p>
+    </div>
+    <hr class="new">
+    <div class="small">
+    <img src="{%static 'accounts/frank.jpg'%}" style="width:30px; height:30px;border-radius:50%;">
+    <p>Wirecutter gives you a list of the best products, appliances, and tech for your home. </p>
+    </div>
+    <hr class="new">
+        <a style="margin-left:430px; color:#4CBB17;cursor:pointer;">MORE</a>
+</div>
+    </div>
+    </div>
+<div class="but1">
+<div class="see">
+    <button>SEE MORE</button>
+</div>
+<div class="continue">
+     <button>CONTIUNUE</button>
+</div>
+    </div>
+<div class="head11">
+<div class="activity">
+<p>ASK NOW</p>
+</div>
+
+<div class="trending">
+<p>TRENDING</p>
+</div>
+
+<div class="store">
+<p>BOOKMARKED</p>
+</div>
+
+<div class="liked">
+<p>LIKED</p>
+</div>
+</div>
+<div class="recommended">
+    <p>RECOMMENDED READS</p>
+</div>
+<div class="read2" style="display:inline;">
+    {%for cast in casts%}
+<div class="reads">
+
+
+    <div class="head91">
+        <div class="left91" style='background:url("{{cast.thumbnail.url}}");'>
+</div>
+<div class="head8">
+<img src="{%static 'accounts/frank.jpg'%}" style="width:30px; height:40px;border-radius:50%;">
+<a style="margin-left:15px; font-size:20px; font-family:monospace; margin-top:5px;" href="{{cast.get_absolute_url}}" target="_blank">{{cast.title}}</a>
+<h6 style="margin-left:25px; font-size:20px; font-family:monospace;margin-top:5px;">{{cast.time}}min</h6>
+<p style="margin-left:55px; font-size:15px; font-family:verdena;margin-top:0.5px;">0 <i style="font-size:24px" class="fa">&#xf06e;</i></p>
+<i style='font-size:24px;margin-left:55px;margin-top:1px;' class='fas'>&#xf0ca;</i>
+</div>
+</div>
+
+    <div class="for">
+
+<div class="review">
+
+    <div class="best">
+        <p>BEST REVIEW</p>
+    </div>
+    {%for comment in cast.comments_set.all%}
+    <div class="small">
+    <img src="{%static 'accounts/frank.jpg'%}" style="width:30px; height:30px;border-radius:50%;">
+
+    <p> {{comment}}</p>
+
+    </div>
+    <hr class="new">
+
+    {%endfor%}
+<a style="margin-left:430px; color:#4CBB17;cursor:pointer;">MORE</a>
+
+</div>
+    </div>
+
+
+
+
+</div>
+    {%endfor%}
+
+
+    <div class="for1" style="margin-left:1000px;margin-top:1px;">
+<div class="review1" style="width:360px;position:absolute;top:900px;left:1132px;">
+    <div class="best">
+       <p><i style="font-size:24px" class="fa">&#xf0a2;</i>NOTIFICATION</p>
+    </div>
+
+    {%for noti in threenot%}
+    <div class="small">
+    <p> {{noti}}.</p>
+    </div>
+    <hr class="new">
+    {%endfor%}
+
+    <a style="margin-left:300px; color:#4CBB17;cursor:pointer;">MORE</a>
+</div>
+    </div>
+</div>
+
+    <div class="for1" style="float:right;">
+<div class="review1">
+    <div class="best">
+       <p><i style="font-size:24px" class="fa">&#xf0a2;</i>ACTIVITY</p>
+    </div>
+
+    {%for act in threeact%}
+    <div class="small">
+
+    <p>{{act}}</p>
+    </div>
+    <hr class="new">
+     {%endfor%}
+
+
+     <a  style="margin-left:300px; color:#4CBB17;cursor:pointer;">MORE</a>
+
+</div>
+    </div>
+</div>
+<div class="more" >
+<button>MORE</button>
+</div>
+<div class="footer">
+
+    <div class="about" style="margin-left:55px;">
+        <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">About Us</p>
+        <br>
+
+        <p style="font-size:20px; font-family:consolas;color:white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. .</p>
+        <br>
+        <br>
+
+    <div class="copyright" style="">
+        <hr style="color:#4CBB17;">
+        <p style="font-size:20px; font-family:consolas;color:white;">Copyright &copy; 2018 Licenced By WebCast.</p>
+
+    </div>
+
+    </div>
+    <div class="trend-people" style="margin-left:85px;">
+    <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">Famous Users</p>
+        <br>
+
+    <img src="{%static 'accounts/olga.jpg'%}"><span>  <a href="#">frank</a></span>
+        <br>
+    <img src="{%static 'accounts/frank.jpg'%}"><span>  <a href="#">olga</a></span>
+        <br>
+    <img src="{%static 'accounts/vonc.jpg'%}"><span>  <a href="#">vonc</a></span>
+
+    </div>
+    <div class="latest-cast" style="margin-left:95px;">
+       <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">Latest Cast</p>
+        <br>
+    <img src="{%static 'accounts/300px1.jpg'%}" style="height:50px;width:50px;"><span>  <a href="#">dumbell workouts</a></span>
+        <br>
+    <img src="{%static 'accounts/300px2.jpg'%}" style="height:50px;width:50px;"><span>  <a href="#">top cook</a></span>
+        <br>
+    <img src="{%static 'accounts/300px3.jpg'%}" style="height:50px;width:50px;"><span>  <a href="#">weight loss</a></span>
+    </div>
+    <div class="subscribe-form" style="margin-left:65px;">
+    <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">Subscribe Us</p>
+        <br>
+    <input type="email" class="email" value="email" placeholder="@mail.com">
+    <input type="submit" class="submit1" value="Send">
+    </div>
+
+
+</div>
+{%endblock%}

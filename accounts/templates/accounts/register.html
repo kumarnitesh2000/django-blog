@@ -1,0 +1,12 @@
+
+{%extends 'magazine/base.html'%}
+{%block title%}Sign Up{%endblock%}
+
+{%block content%}
+
+<form method="post">
+    {%csrf_token%}
+{{reg_form.as_p}}
+    <p> <input type="submit"></p>
+</form>
+{%endblock%}

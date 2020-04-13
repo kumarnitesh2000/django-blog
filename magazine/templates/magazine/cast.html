@@ -1,0 +1,88 @@
+
+
+
+{%extends 'magazine/basecast.html'%}
+
+{%block title%}{%endblock%}
+{%block content%}
+cast created by {{cast.publish_by}}
+
+<br>
+<br>
+<br>
+cast publish on{{cast.publish}}
+<br>
+<br>
+<br>
+visit the magazine {{cast.magazine}}
+<br>
+<br>
+<br>
+liked by -
+{%for vote in cast.upvotes.all%}
+{%if vote is user%}
+<button>vote now</button>
+{%else%}
+{{vote}}
+{%endif%}
+{%endfor%}
+<br>
+<br>
+<br>
+total time take to read    {{cast.time}} minutes
+<br>
+<br>
+<br>
+<img src="{{cast.thumbnail.url}}" style="height:300px;width:400px;">
+<br>
+<br>
+title = {{cast.title}}
+<br>
+<br>
+<br>
+content = {{cast.content}}
+<br>
+<br>
+
+{%for box in cast.box_set.all%}
+<hr>
+{{box}}
+<br>
+<br>
+{{box.file}}
+<br>
+<br>
+<iframe src="{{box.file.url}}"></iframe>
+
+<br>
+<br>
+{{box.text}}
+<br>
+<br>
+<hr>
+{%endfor%}
+<br>
+<br>
+<br>
+<br>
+all the comments are :
+<br>
+<br>
+{%for comment in cast.comments_set.all%}
+{{comment}} with total votes {{comment.upvotes}}
+<br>
+<hr>
+
+
+
+
+
+
+{%endfor%}
+<form method="post">
+    {%csrf_token%}
+    {{form}}
+    <input type="text" value="{{cast.title}}" name="cast" style="display:none;">
+<input type="submit">
+</form>
+{%endblock%}

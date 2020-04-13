@@ -1,0 +1,189 @@
+
+
+{%extends 'magazine/base.html'%}
+{%block title%}{%endblock%}
+
+{%block content%}
+{%load static%}
+<style>
+.footer{
+height:290px;
+width:99.9%;
+position:relative;
+bottom:20px;
+background-color:#26272b;
+display:flex;
+
+}
+.submit1{
+border-radius:10px;
+width:260px;
+padding-left:80px;
+padding-right:80px;
+padding-top:10px;
+padding-bottom:10px;
+background-color:#4CBB17;
+font-family:consolas;
+font-size:20px;
+margin-top:10px;
+display:inline;
+}
+.email{
+border-radius:10px;
+width:240px;
+background-color:#eee;
+padding-left:5px;
+padding-right:8px;
+padding-top:10px;
+padding-bottom:10px;
+font-family:consolas;
+font-size:20px;
+margin-top:10px;
+}
+@import "compass/css3";
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
+.helptext{
+  display:none;
+}
+.registeration-form{
+width:35%;
+height:450px;
+background-color:#eee;
+margin-left:205px;
+box-shadow:0 10px 20px rgba(0,0,0,0.19),
+            0 6px 6px  rgba(0,0,0,0.23);
+margin-top:100px;
+margin-bottom:90px;
+}
+label{
+  display:none;
+}
+
+#login{
+  cursor:pointer;
+  border-bottom:solid 2px #4CBB17;
+  margin-left:140px;
+  margin-top:10px;
+  font-size:24px;
+  font-family:"Raleway";
+}
+#signup{
+    margin-top:10px;
+  margin-left:110px;
+  font-size:24px;
+  cursor:pointer;
+   font-family:"Raleway";
+}
+form{
+  font-family:"Raleway";
+  margin-top:50px;
+  margin-left:160px;
+}
+form input[type='text']{
+  width:180px;
+  padding:10px;
+  font-family:"Raleway";
+}
+form input[type='email']{
+  width:180px;
+  padding:10px;
+  font-family:"Raleway";
+}
+form input[type='password']{
+  width:180px;
+  padding:10px;
+  font-family:"Raleway";
+}
+form input[type='submit']{
+
+  padding:10px;
+  width:200px;
+  background-color:#4CBB17;
+  font-family:"Raleway";
+}
+
+
+</style>
+<div style="display:flex;background-color:#4CBB17;">
+
+    <div class="move">
+<img src="{%static 'accounts/img.png'%}" style="height:500px;width:600px;">
+</div>
+
+<div class="registeration-form">
+
+   <div id="option" style="display:flex;">
+             <div id="login" class="registerbut">SignIn</div>
+             <diV id="signup" class="registerbut">SignUp</diV>
+
+    </div>
+
+
+
+<form method="post" class="signup" style="display:none;" action="{%url 'accounts:register'%}">
+    {%csrf_token%}
+    {{reg_form.as_p}}
+    <p> <input type="submit"></p>
+    <p>You Agree With Our<a href="#" style="margin-left:23px;color:#4CBB17; font-family:Raleway;font-size:16px;">Terms</a></p>
+</form>
+
+<form method="post" class="signin" action="{%url 'accounts:login'%}">
+    {%csrf_token%}
+    {{form.as_p}}
+    <p> <input type="submit"></p>
+    <p>OR<a href="#" style="margin-left:23px;color:#4CBB17; font-family:Raleway;font-size:16px;">Forgot Password  ?</a></p>
+
+</form>
+</div>
+
+
+
+</div>
+<div class="footer">
+
+    <div class="about" style="margin-left:55px;">
+        <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">About Us</p>
+        <br>
+
+        <p style="font-size:20px; font-family:consolas;color:white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. .</p>
+        <br>
+        <br>
+
+    <div class="copyright" style="">
+        <hr style="color:#4CBB17;">
+        <p style="font-size:20px; font-family:consolas;color:white;">Copyright &copy; 2018 Licenced By WebCast.</p>
+
+    </div>
+
+    </div>
+    <div class="trend-people" style="margin-left:85px;">
+    <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">Famous Users</p>
+        <br>
+
+    <img src="{%static 'accounts/olga.jpg'%}"><span>  <a href="#">frank</a></span>
+        <br>
+    <img src="{%static 'accounts/frank.jpg'%}"><span>  <a href="#">olga</a></span>
+        <br>
+    <img src="{%static 'accounts/vonc.jpg'%}"><span>  <a href="#">vonc</a></span>
+
+    </div>
+    <div class="latest-cast" style="margin-left:95px;">
+       <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">Latest Cast</p>
+        <br>
+    <img src="{%static 'accounts/300px1.jpg'%}" style="height:50px;width:50px;"><span>  <a href="#">dumbell workouts</a></span>
+        <br>
+    <img src="{%static 'accounts/300px2.jpg'%}" style="height:50px;width:50px;"><span>  <a href="#">top cook</a></span>
+        <br>
+    <img src="{%static 'accounts/300px3.jpg'%}" style="height:50px;width:50px;"><span>  <a href="#">weight loss</a></span>
+    </div>
+    <div class="subscribe-form" style="margin-left:65px;">
+    <p style="font-size:20px;border-bottom:1px solid #4CBB17;font-family:consolas;color:white;">Subscribe Us</p>
+        <br>
+    <input type="email" class="email" value="email" placeholder="@mail.com">
+    <input type="submit" class="submit1" value="Send">
+    </div>
+
+
+</div>
+
+{%endblock%}
